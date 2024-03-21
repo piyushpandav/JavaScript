@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> clike</title>
+</head>
+
+<body>
+    <h1>
+        <p id="data"> HELLO </p>
+    </h1>
+    <button onclick="demo()"> clike Me </button>
+
+    <br><br><br><br>
+    <button>
+
+        <h1 id="demo"  onclick="text()">Click me to change background color.</h1>
+    </button>
+
+    <script>
+        let i = 0;
+        function demo() {
+            if (i == 0) {
+
+                document.getElementById('data').innerHTML = "WELCOME"
+                i = 1;
+
+            }
+            else {
+                document.getElementById('data').innerHTML = "HELLO"
+                i = 0;
+            }
+
+        }
+
+
+        let ji = 0;
+
+        function text() {
+            if (ji == 0) {
+
+                document.getElementById("demo").style.color = "green";
+                document.body.style.backgroundColor = "green";
+                ji = 1;
+            } else {
+
+                document.getElementById("demo").style.color = "red";
+                document.body.style.backgroundColor = "red";
+                ji = 0;
+            }
+            
+        }
+
+
+
+    </script>
+</body>
+
+</html>

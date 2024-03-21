@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.w-100{
+    margin: auto;
+}
+.w-80{
+    width: 100%;
+
+    /* position: absolute; */
+    z-index: -1;
+    /* order: 2; */
+    width: 80%;
+    right: 0;
+    margin-left: auto;
+    
+    
+}
+.number{
+    padding: 50px;
+    background-color: rgb(53, 110, 224);
+}
+.w-20{
+    height:100%;
+    width: 20%;
+    background-color: rgb(2, 183, 14);
+    position: absolute;
+    font-size: 50px; 
+
+}
+ .write{
+    margin: 10px;
+   
+ }
+    

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ARITHMETIC</title>
+</head>
+
+<body>
+    <script>
+        // let a = prompt('ENTER A:')
+        // console.log(a);
+
+        // let b = prompt('ENTER B:')
+        // console.log(b);
+
+        // a = parseInt(a);
+        // b = parseInt(b);
+
+        // let choise = prompt('choise:');
+        // console.log(choise);
+
+        // switch (choise) {
+        //     case "+":
+        //         {
+        //             sum = 0
+        //             sum = a + b;
+        //             console.log(sum);
+        //             break;
+        //         }
+        //     case "-":
+        //         {
+        //             min = a - b;
+        //             console.log(min);
+        //             break;
+        //         }
+        //     case "*":
+        //         {
+        //             mul = a * b;
+        //             console.log(mul);
+        //             break;
+        //         }
+
+        //     case "/":
+        //         {
+        //             div = a / b;
+        //             console.log(div);
+        //             break;
+        //         }
+
+        //     case "%":
+        //         {
+        //             mod = a % b;
+        //             console.log(mod);
+        //             break;
+        //         }
+        //     default:
+        //         break;
+        // }
+        function ARITHMETIC(a,b,sum)
+        {
+            if (sum=='+') {
+                console.log(a+b);
+                
+            }
+            else if (sum=='-') {
+                console.log(a-b);
+            }
+            else if (sum=='*') {
+                console.log(a*b);
+            }
+            else if (sum=='/') {
+                console.log(a/b);
+            }
+            else if (sum=='%') {
+                console.log(a%b);
+            }
+        }
+        let a = prompt('ENTER A:')
+        console.log(a);
+
+        let b = prompt('ENTER B:')
+        console.log(b);
+        
+        a = parseInt(a);
+        b = parseInt(b);
+
+
+        let sum = prompt('ENTER SINE');
+        ARITHMETIC(a,b,sum);
+       
+    </script>
+</body>
+
+</html>

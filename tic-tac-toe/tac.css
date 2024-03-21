@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  position: relative;
+  background-color: rgb(213, 223, 255);
+}
+
+.title {
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  top: 80px;
+  position: relative;
+  top: -3rem;
+  font-size: 5rem;
+  white-space: nowrap;
+  /* font-family: "Madimi One", sans-serif; */
+  background-color: aqua;
+  font-family:serif;
+}
+
+.game {
+  min-width: 400px;
+  text-align: center;
+   padding-top: 10vw;  
+   
+
+}
+
+.w-button {
+  width: 300px;
+  font-size: 40px;
+  text-align: center;  
+  position: relative;
+  display: flex;
+  top: 80px;
+  position: relative;
+  top: -3rem;
+  flex-wrap: wrap;
+  margin-left: 500px;
+  margin-top: 100px;
+   
+}
+
+.w-button button {
+  width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  /* margin: 5px; */
+  background-color: rgb(144, 156, 243);
+}

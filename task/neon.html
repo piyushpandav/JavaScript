@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  NEON NUMBER </title>
+</head>
+<body>
+   <script>
+        var n=1  
+        var sum=0 
+        var  rem
+        var  s
+        var  i
+
+        s=n*n;
+        i=n;
+
+        for(;s!=0;)
+        {
+            rem=s%10;
+            sum=sum+rem ;
+            s= parseInt(s/10);
+        }
+        console.log( sum);
+        console.log(  s);
+        
+        if( sum==n)
+        {
+            console.log( "ITS NEON");
+        }
+        else{
+            console.log(" ITS NOT NEON");
+        }
+
+   </script> 
+</body>
+</html>

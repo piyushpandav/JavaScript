@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #252542;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 2px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgb(243, 238, 238);
+            text-align: center;
+            font-size: 3em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cell:hover {
+            background-color: rgba(237, 148, 221, 0);
+        }
+
+        .winner {
+            background-color: #1083ee;
+        }
+
+        .draw {
+            background-color: #f6f5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        
+        <label for="player1">Player 1 Name:</label>
+        <br>
+        <input type="text" id="player1" placeholder="Player 1">
+        <br><br>
+        <label for="player2">Player 2 Name:</label>
+        <br>
+        <input type="text" id="player2" placeholder="Player 2">
+        <br><br>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <div class="board" style="display:none;" onclick="handleMove(event)">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+
+    <script>
+        let currentPlayer = 'X';
+        const cells = document.querySelectorAll('.cell');
+        let player1Name, player2Name;
+
+        function startGame() {
+            player1Name = document.getElementById('player1').value || 'Player 1';
+            player2Name = document.getElementById('player2').value || 'Player 2';
+            document.querySelector('div').style.display = 'none';
+            document.querySelector('.board').style.display = 'grid';
+        }
+
+        function handleMove(event) {
+            const cell = event.target;
+            if (cell.classList.contains('cell') && !cell.textContent) {
+                cell.textContent = currentPlayer;
+                if (checkWinner(currentPlayer)) {
+                    cell.classList.add('winner');
+                    setTimeout(() => {
+                        const winnerName = currentPlayer === 'X' ? player1Name : player2Name;
+                        const loserName = currentPlayer === 'X' ? player2Name : player1Name;
+                        alert(winnerName + " wins!\n\nCongratulations " + winnerName + "!\n\nBetter luck next time " + loserName + "!");
+                        resetGame();
+                    }, 300);
+                } else if (checkDraw()) {
+                    document.querySelectorAll('.cell').forEach(cell => {
+                        cell.classList.add('draw');
+                    });
+                    setTimeout(() => {
+                        alert("It's a draw!");
+                        resetGame();
+                    }, 300);
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                }
+            }
+        }
+
+        function checkWinner(player) {
+            const winningCombos = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+            return winningCombos.some(combo => {
+                return combo.every(index => {
+                    return cells[index].textContent === player;
+                });
+            });
+        }
+
+        function checkDraw() {
+            return [...cells].every(cell => cell.textContent);
+        }
+
+        function resetGame() {
+            cells.forEach(cell => {
+                cell.textContent = '';
+                cell.classList.remove('winner', 'draw');
+            });
+            currentPlayer = 'X';
+            document.querySelector('div').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

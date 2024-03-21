@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // let n = prompt('ENTER SIZE:');
+        // console.log(n);
+
+
+        //     let min = Infinity;
+        //     let max = -Infinity;
+        //     let sum = 0;
+
+        //     for (let i = 0; i < n; i++) {
+        //         let data = prompt('Enter value:');
+        //         console.log(data);
+
+
+        //             let numberData = Number(data);
+        //             min = Math.min(min, numberData);
+        //             max = Math.max(max, numberData);
+        //             sum += numberData;
+
+        //     }
+
+        //     console.log('Minimum value:', min);
+        //     console.log('Maximum value:', max);
+        //     console.log('Sum of values:', sum);
+
+
+        
+        let numbers = [];
+ 
+        let size = parseInt(prompt('Enter the size of the array:'));
+
+         
+        for (let i = 0; i < size; i++) {
+            let userInput = parseInt(prompt('Enter a number:'));
+            numbers.push(userInput);
+        }
+
+       
+        let min = numbers[0];  
+        let max = numbers[0];  
+        let sum = 0;
+
+        
+        for (let i = 0; i < numbers.length; i++) {
+            let number = numbers[i];
+ 
+            if (number < min) {
+                min = number;
+            } 
+            if (number > max) {
+                max = number;
+            } 
+            sum += number;
+        }
+
+         
+        console.log('Array:', numbers);
+        console.log('Minimum value:', min);
+        console.log('Maximum value:', max);
+        console.log('Sum of values:', sum);
+
+
+    </script>
+</body>
+
+</html>

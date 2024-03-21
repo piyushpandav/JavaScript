@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER FACT</title>
+</head>
+
+<body>
+    <script>
+
+        // let  n = prompt('ENTER FACT NO')
+
+
+
+        // let fact =1;
+
+        // for (let i = 1; i <=n; i++) {
+
+        //         fact=fact*i;
+        //         console.log( i);
+
+
+        // }
+        // console.log(fact);
+
+
+        let n = prompt('ENTER FACT NO')
+        let factoria =0;
+        function factorial(n) {
+           
+            if (n === 0) {
+                return 1;
+            }
+            console.log(n);
+            return n * factorial(n - 1);
+           
+        }
+         
+        console.log(factorial(n));
+
+    </script>
+</body>
+
+</html>
